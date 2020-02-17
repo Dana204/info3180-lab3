@@ -1,0 +1,51 @@
+{% extends "base.html" %} {%block main %}
+<h1>Contact Form</h1>
+<hr>
+<div class="row justify-content-center">
+    <span class="text bg-burgundy text-white px-3 py-1 ">Fill in this form to contact the site
+        owners</span>
+</div>
+<div class="row justify-content-center mt-3 ">
+    <div class="col-lg-8">
+        <form method="POST" action="{{url_for('contact')}}">
+            {{form.csrf_token}}
+            <div class="form-group row">
+                <div class="col col-lg-6 ">
+                    <div class="mb-5">
+                        {{form.name.label(class="text-burgundy size")}}
+                        <p>Enter your full name</p>
+                        {{form.name(class_="input-size")}}
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div>
+                        {{form.email.label(class="text-burgundy size")}}
+                        <p>Enter your e-mail address</p>
+                        {{form.email(class_="input-size")}}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row ">
+                <div class="col-lg-6">
+                    <div>
+                        {{form.message.label(class="text-burgundy size")}}
+                        <p>Enter your message</p>
+                        {{form.message(class_="textfield-size")}}
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div>
+                        {{form.subject.label(class="text-burgundy size")}}
+                        <p>Enter the subject for your message</p>
+                        {{form.subject(class_="input-size")}}
+                    </div>
+                </div>
+
+            </div>
+            <div class="row justify-content-center">
+                <button type=" submit" class="bg-burgundy text-white btn px-4">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+{%endblock%}

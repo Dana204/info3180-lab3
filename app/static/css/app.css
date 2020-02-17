@@ -1,3 +1,48 @@
+:root {
+    --burgundy2: #82001E;
+    --gray: #999;
+}
+
+.bg-burgundy {
+    background-color: var(--burgundy2);
+}
+
+.text-burgundy {
+    color: var(--burgundy2);
+}
+
 body {
-    padding-top: 5rem;
+    padding-top: 4rem;
+    font-family: 'Arbutus Slab',
+        serif;
+}
+
+.text {
+    font-size: 1.3rem;
+}
+
+.size {
+    font-size: 1.2rem;
+}
+
+.input-size {
+    width: 260px;
+    height: 38px;
+    border-radius: 5px;
+    border: 1px solid var(--gray);
+}
+
+.textfield-size {
+    width: 260px;
+    height: 90px;
+    border-radius: 5px;
+    border: 1px solid var(--gray);
+}
+
+form.name.label {
+    color: var(--burgundy2);
+}
+
+.btn {
+    border-radius: 25px;
 }
