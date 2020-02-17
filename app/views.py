@@ -20,8 +20,8 @@ def contact():
     myform= ContactForm()
     if request.method == "POST":
         if myform.validate_on_submit():
-            msg= Message("Hello", sender=("myform.name.data","myform.email.data"), recipients=["danacam28@gmail.com"])
-            msg.body= "The submitting of the form was successfully"
+            msg= Message(request.form['subject'], sender=("myform.name.data","myform.email.data"), recipients=[request.form['email']])
+            msg.body= request.form['message']
             mail.send(msg)
             flash('Form was submitted sucessfully')
             return redirect(url_for("home"))
